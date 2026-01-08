@@ -12,27 +12,50 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          elevation : 3,
-          title : Text("My favourite color is Blue"), 
-          leading : Icon(
+          elevation: 3,
+          title: const Text("My favourite color is Blue"),
+          leading: const Icon(
             Icons.favorite,
-            color: const Color.fromARGB(255, 67, 132, 244),
+            color: Colors.pink,
             size: 24.0,
-            semanticLabel: 'Text to announce in acessibility moles',
+            semanticLabel: 'Favorite icon',
           ),
           actions: [
             IconButton(
-              onPressed : () {}, 
-              icon : Icon(Icons.expand_circle_down, color: Colors.amber),
+              onPressed: () {},
+              icon: const Icon(Icons.expand_circle_down, color: Colors.amber),
             ),
             IconButton(
-              onPressed : () {}, 
-              icon : Icon(Icons.upload, color: Colors.blueAccent),
+              onPressed: () {},
+              icon: const Icon(Icons.upload, color: Colors.blueAccent),
             ),
           ],
-        ), 
+        ),
         body: Center(
-          child: Text('Hello World!'),
+          child: Container(
+            width: double.infinity,
+            height: 150,
+            color: Colors.green,
+            margin: const EdgeInsets.symmetric(horizontal: 20),
+            padding: const EdgeInsets.all(20),
+            child: Container(
+              width: 300,
+              height: 100,
+              color: Colors.red,
+              padding: const EdgeInsets.only(top: 25),
+              child: Center(
+                child: Container(
+                  width: 200,
+                  height: 200,
+                  decoration: BoxDecoration(
+                    color: Colors.pink,
+                    border: Border.all(color: Colors.green, width: 10),
+                    borderRadius: BorderRadius.circular(100),
+                  ),
+                ),
+              ),
+            ),
+          ),
         ),
       ),
     );
