@@ -10,52 +10,130 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
+        backgroundColor : Colors.black,
         appBar: AppBar(
+          backgroundColor: Colors.black,
           elevation: 3,
-          title: const Text("My favourite color is Blue"),
-          leading: const Icon(
-            Icons.favorite,
-            color: Colors.pink,
+          leading: Icon(
+            Icons.arrow_back,
+            color: Colors.white,
             size: 24.0,
-            semanticLabel: 'Favorite icon',
+            semanticLabel: 'Text to announce in accessbility modes',
           ),
           actions: [
             IconButton(
               onPressed: () {},
-              icon: const Icon(Icons.expand_circle_down, color: Colors.amber),
+              icon: const Icon(Icons.favorite_outline_outlined, color: Colors.white),
             ),
             IconButton(
               onPressed: () {},
-              icon: const Icon(Icons.upload, color: Colors.blueAccent),
+              icon: const Icon(Icons.ios_share_outlined, color: Colors.blueAccent),
             ),
           ],
         ),
-        body: Center(
-          child: Container(
-            width: double.infinity,
-            height: 150,
-            color: Colors.green,
-            margin: const EdgeInsets.symmetric(horizontal: 20),
-            padding: const EdgeInsets.all(20),
-            child: Container(
-              width: 300,
-              height: 100,
-              color: Colors.red,
-              padding: const EdgeInsets.only(top: 25),
-              child: Center(
-                child: Container(
-                  width: 200,
-                  height: 200,
-                  decoration: BoxDecoration(
-                    color: Colors.pink,
-                    border: Border.all(color: Colors.green, width: 10),
-                    borderRadius: BorderRadius.circular(100),
+        body: Column(
+          children: [
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+              margin: EdgeInsets.symmetric(horizontal: 20),
+              width: double.infinity, 
+              height: 140, 
+              decoration: BoxDecoration(
+                color: Color.fromARGB (255,40,40,40),
+                borderRadius: BorderRadius.circular(30),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row( 
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Sleep', style: TextStyle(color: Colors.white, fontSize: 30)
+                      ),
+                      Icon(Icons.chevron_right_outlined, color: Colors.white),
+                    ],
                   ),
-                ),
+                  Text('by Alison S', style: TextStyle(color: Colors.grey)),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 10),
+                    child: Row(children: [
+                      Container(
+                       width: 100, 
+                       height: 20, 
+                       decoration: BoxDecoration(
+                         color: Color.fromARGB (255,50,50,50),
+                         borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: Text(
+                          'very relaxing', 
+                          style: TextStyle(color: Colors.white),
+                          textAlign: TextAlign.center,
+                        ),
+                       ),
+                       Container(
+                        margin: EdgeInsets.symmetric(horizontal: 5),
+                        width: 100, 
+                        height: 20, 
+                        decoration: BoxDecoration(
+                          color: Color.fromARGB (255,50,50,50),
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: Text(
+                          'pleasant', 
+                          style: TextStyle(color: Colors.white),
+                          textAlign: TextAlign.center,
+                        ),
+                       ),
+                       Container(
+                       width: 100, 
+                       height: 20, 
+                       decoration: BoxDecoration(
+                         color: Color.fromARGB (255,50,50,50),
+                         borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: Text(
+                          'deep', 
+                          style: TextStyle(color: Colors.white),
+                          textAlign: TextAlign.center,
+                        ),
+                       ),
+                      ],
+                    ),
+                  ),
+                ],
               ),
             ),
-          ),
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+              width: double.infinity, 
+              height: 100, 
+              decoration: BoxDecoration(
+                color: Color.fromARGB (255,40,40,40),
+                borderRadius: BorderRadius.circular(30),
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: 20),
+              width: double.infinity, 
+              height: 130, 
+              decoration: BoxDecoration(
+                color: Color.fromARGB (255,40,40,40),
+                borderRadius: BorderRadius.circular(30),
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+              width: double.infinity, 
+              height: 130, 
+              decoration: BoxDecoration(
+                color: Color.fromARGB (255,40,40,40),
+                borderRadius: BorderRadius.circular(30),
+              ),
+            ),
+          ],
         ),
       ),
     );
