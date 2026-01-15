@@ -107,12 +107,29 @@ class MainApp extends StatelessWidget {
               ),
             ),
             Container(
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
               margin: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
               width: double.infinity, 
               height: 100, 
               decoration: BoxDecoration(
                 color: Color.fromARGB (255,40,40,40),
                 borderRadius: BorderRadius.circular(30),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row( 
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Timer', style: TextStyle(color: Colors.white, fontSize: 18)
+                      ),
+                      Icon(Icons.chevron_right_outlined, color: Colors.white),
+                    ],
+                  ),
+                  Text('40 min', style: TextStyle(color: Colors.grey)),
+                  Padding(padding: const EdgeInsets.only(top: 14))
+                ],
               ),
             ),
             Container(
@@ -126,7 +143,7 @@ class MainApp extends StatelessWidget {
             ),
             Container(
               margin: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-              width: double.infinity, 
+              width: double.infinity,
               height: 130, 
               decoration: BoxDecoration(
                 color: Color.fromARGB (255,40,40,40),
@@ -139,3 +156,4 @@ class MainApp extends StatelessWidget {
     );
   }
 }
+
