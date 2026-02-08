@@ -1,5 +1,6 @@
 import 'package:app_bar/widgets/section.dart';
 import 'package:flutter/material.dart';
+import 'share_screen.dart';
 
 class PlayScreen extends StatelessWidget {
   const PlayScreen({super.key});
@@ -11,11 +12,16 @@ class PlayScreen extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Colors.black,
           elevation: 3,
-          leading: Icon(
-            Icons.arrow_back,
-            color: Colors.white,
-            size: 24.0,
-            semanticLabel: 'Text to announce in accessbility modes',
+          leading: IconButton(
+            onPressed: () {
+              Navigator.of(context).pop();
+            }, 
+            icon: Icon(
+              Icons.arrow_back,
+              color: Colors.white,
+              size: 24.0,
+              semanticLabel: 'Text to announce in accessibility modes',
+            ),
           ),
           actions: [
             IconButton(
@@ -23,19 +29,27 @@ class PlayScreen extends StatelessWidget {
               icon: const Icon(Icons.favorite_outline_outlined, color: Colors.white),
             ),
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute<void>(
+                  builder: (context) => const ShareScreen(),
+                  ),
+                );
+              },
               icon: const Icon(Icons.ios_share_outlined, color: Colors.blueAccent),
             ),
           ],
         ),
+
         body: SingleChildScrollView(
           scrollDirection: Axis.vertical,
           child: Column(
             children: [
-              
               Section(
                 header: 'Sleep', 
-                row1: Text('by Alission S', style: TextStyle(color: Colors.grey),
+                row1: 
+                Text(
+                  'by Alission S', style: TextStyle(color: Colors.grey),
                 ),
                 fontSize: 30,
                 height: 140,
@@ -68,7 +82,7 @@ class PlayScreen extends StatelessWidget {
                           'pleasant', 
                           style: TextStyle(color: Colors.white),
                           textAlign: TextAlign.center,
-                        ),
+                         ),
                         ),
                          Container(
                           width: 100, 
@@ -90,10 +104,12 @@ class PlayScreen extends StatelessWidget {
 
               Section(
                   header: 'Timer',
-                  row1: Text('40 min', 
-                  style: TextStyle(color: Colors.grey)), 
+                  row1: Text(
+                    '40 min', 
+                    style: TextStyle(color: Colors.grey),
+                  ), 
                   height: 100, 
-                  fontSize: 20
+                  fontSize: 20,
                 ),
 
                 Section(
@@ -119,7 +135,7 @@ class PlayScreen extends StatelessWidget {
                       ),
                       height: 120,
                       fontSize: 20,
-                      ),
+                    ),
 
             Section(
               header: 'Motive', 
